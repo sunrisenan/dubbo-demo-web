@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.od.dubbotest.api.HelloService;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -20,7 +19,7 @@ public class HelloAction {
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss ");
 		String ds = df.format(new Date());
 		System.out.println(ds + "HelloAction接收到请求:"+name);
-		String str = ds + "<h1>这是Dubbo 消费者端(Apollo)</h1><h2>这里是6月3日的新需求，aaaaaa。。。</h2>";
+		String str = ds + "<h1>这是Dubbo 消费者端(Tomcat服务)</h1>";
 		str+=helloService.hello(name);
 		System.out.println(ds + "HelloService返回到结果:"+str);
 		return str;
